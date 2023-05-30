@@ -25,7 +25,7 @@ docker run -v $(pwd)/media:/app/public/media -d --restart=always -p 8080:80 --na
 
 ### Add example data
 ```sh
-docker exec -it sylius bin/console sylius:fixtures:load -n && sudo chown -R 33:33 media
+docker exec -it sylius bin/console sylius:fixtures:load -n && sudo chown -R $USER media && sudo chmod -R 777 media
 ```
 >This chown permit the container to write in the media folder.
 >The example data will be loaded.
