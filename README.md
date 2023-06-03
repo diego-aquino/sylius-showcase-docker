@@ -16,7 +16,7 @@ docker build --platform linux/amd64 -t sylius-showcase .
 
 And then run a docker container with the image:
 ```sh
-docker run -v $(pwd)/media:/app/public/media -d --restart=always -p 8080:80 --name 'sylius' sylius-showcase
+docker run -v $(pwd)/media:/app/public/media -d --restart=no -p 8080:80 --name 'sylius' sylius-showcase
 ```
 >The **./media** volume is exposed for the container. We will give write permission for this folder.
 >The **restart** flag is actived. The container will start again if the host machine power off.
@@ -35,6 +35,6 @@ Visit http://localhost:8080/ to view the shop's frontend.
 Visit http://localhost:8080/admin to view the admin-view.
 
 ### Login
-_Default credentials:_  
-Username: `sylius`  
-Password: `sylius`  
+_Default credentials:_
+Username: `sylius`
+Password: `sylius`
